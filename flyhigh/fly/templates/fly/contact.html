@@ -1,0 +1,51 @@
+{% extends 'fly/index.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'fly/MINCSS/contact.min.css' %}">
+{% endblock css %}
+
+{% block body %}
+
+    <h1>GET IN TOUCH</h1>
+    <section class="contactsection" style="--img2:url('{% static 'fly/images/Contact_bg.jpg' %}')   ">
+        <div class="box" >
+            <div class="detail">
+                <div class="call">
+                    <i class="fas fa-phone-office"></i>
+                    <div class="desc">
+                        <h2>Call Us</h2>
+                        <p>+91-9893894867</p>
+                    </div>
+                </div>
+                <div class="call">
+                    <i class="fas fa-envelope"></i>
+                    <div class="desc">
+                        <h2>Email Us</h2>
+                        <p>rmasterharsh999@gmail.com</p>
+                    </div>
+                </div>
+                <div class="call">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="desc">
+                        <h2>Address</h2>
+                        <p>New mahalaxmi nagar lalbagh burhanpur - 450331 (M.P) </p>
+                    </div>
+                </div>
+            </div>
+            <div class="detail1">
+                <form id="contactform" action="" method="POST">
+                    {% csrf_token %}
+                    <h2>SEND MESSAGE</h2>
+                    <input name="name" type="text" class="flow-control" placeholder="Enter your name" required><span>Full Name</span><br>
+                    <input name="Email" type="email" class="flow-control" placeholder="Enter your email" required> <span>Email</span> <br>
+                    <textarea name="message" id="message" class="flow-control"
+                    placeholder="Type your message" rows="4"></textarea><span>Message</span><br>
+                    <input type="submit" class="flow-control submit" value="SEND MESSAGE">
+                </form>
+            </div>
+        </div>
+        
+    </section>
+        
+{% endblock body %}

@@ -1,0 +1,407 @@
+{% extends 'fly/index.html' %}
+{% load static %}
+{% block title %}selectflight{% endblock title %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'fly/MINCSS/selectflight.min.css' %}">
+{% endblock css %}
+
+ {% block body %}
+ <div class="flightsection">
+     <h1>Available flights</h1>
+     {% for rt in root %}
+     <div class="flightlist">
+         <div class="logo">
+             <img src="/media/{{rt.flight_name.flight_logo}}" alt="">  
+         </div>
+         <div class="from">
+             <div class="fromname">
+                 <h1>{{rt.dep_airport}}</h1>
+             </div>
+             <div class="fromtime">
+                 <h4>{{rt.dep_time}}</h4>
+             </div>
+         </div>
+         <div class="flight">
+             <div class="flightname">
+                 <p>{{rt.flight_name}}</p>
+             </div>
+             <div class="traveltime">
+                 <h4>{{rt.travel_time}}</h4>
+             </div>
+             <div class="stop">
+                 <h3>NON-STOP</h3>
+             </div>
+         </div>
+         <div class="to">
+             <div class="toname">
+                 <h1>{{rt.arr_airport}}</h1>
+             </div>
+             <div class="totime">
+                 <h4>{{rt.arr_time}}</h4>
+             </div>
+         </div>
+         <div class="booking">
+             <div class="price">
+                 <h4>INR {{rt.total_fare}}</h4>
+             </div>
+             <div class="class">
+                 <p>{{rt.cls}}</p>
+             </div>
+             <div class="confirmbooking">
+                 <form action="{% url 'confirmbooking' %}" method="post">
+                     {% csrf_token %}
+                     <input type="text" style="display:none;" name="rootid" id="rootid" value="{{rt.id}}">
+                     <input type="submit" value="Book Now">
+                 </form>
+             </div>
+         </div>
+     </div>
+     {% endfor %}
+     {% comment %} <div class="flightlist">
+         <div class="logo">
+             <img src="{% static 'fly/images/qatar.jpeg' %}" alt="">  
+         </div>
+         <div class="from">
+             <div class="fromname">
+                 <h1>Mumbai</h1>
+             </div>
+             <div class="fromtime">
+                 <h4>12:00</h4>
+             </div>
+         </div>
+         <div class="flight">
+             <div class="flightname">
+                 <p>Qatar</p>
+             </div>
+             <div class="traveltime">
+                 <h4>1H 20M</h4>
+             </div>
+             <div class="stop">
+                 <h3>NON-STOP</h3>
+             </div>
+         </div>
+         <div class="to">
+             <div class="toname">
+                 <h1>Delhi</h1>
+             </div>
+             <div class="totime">
+                 <h4>13.20</h4>
+             </div>
+         </div>
+         <div class="booking">
+             <div class="price">
+                 <h4>INR 3,120</h4>
+             </div>
+             <div class="class">
+                 <p>economy</p>
+             </div>
+             <div class="confirmbooking">
+                 <a href="{% url 'confirmbooking' %}"><button>Book Now</button></a>
+             </div>
+         </div>
+     </div>
+     <div class="flightlist">
+         <div class="logo">
+             <img src="{% static 'fly/images/air-india-logo-1024x836.png' %}" alt="">  
+         </div>
+         <div class="from">
+             <div class="fromname">
+                 <h1>Mumbai</h1>
+             </div>
+             <div class="fromtime">
+                 <h4>12:00</h4>
+             </div>
+         </div>
+         <div class="flight">
+             <div class="flightname">
+                 <p>Air India</p>
+             </div>
+             <div class="traveltime">
+                 <h4>1H 20M</h4>
+             </div>
+             <div class="stop">
+                 <h3>NON-STOP</h3>
+             </div>
+         </div>
+         <div class="to">
+             <div class="toname">
+                 <h1>Delhi</h1>
+             </div>
+             <div class="totime">
+                 <h4>13.20</h4>
+             </div>
+         </div>
+         <div class="booking">
+             <div class="price">
+                 <h4>INR 1,570</h4>
+             </div>
+             <div class="class">
+                 <p>economy</p>
+             </div>
+             <div class="confirmbooking">
+                 <a href="{% url 'confirmbooking' %}"><button>Book Now</button></a>
+             </div>
+         </div>
+     </div>
+     <div class="flightlist">
+         <div class="logo">
+             <img src="{% static 'fly/images/airasia-india.png' %}" alt="">  
+         </div>
+         <div class="from">
+             <div class="fromname">
+                 <h1>Mumbai</h1>
+             </div>
+             <div class="fromtime">
+                 <h4>12:00</h4>
+             </div>
+         </div>
+         <div class="flight">
+             <div class="flightname">
+                 <p>Air Asia</p>
+             </div>
+             <div class="traveltime">
+                 <h4>1H 20M</h4>
+             </div>
+             <div class="stop">
+                 <h3>NON-STOP</h3>
+             </div>
+         </div>
+         <div class="to">
+             <div class="toname">
+                 <h1>Delhi</h1>
+             </div>
+             <div class="totime">
+                 <h4>13.20</h4>
+             </div>
+         </div>
+         <div class="booking">
+             <div class="price">
+                 <h4>INR 1,350</h4>
+             </div>
+             <div class="class">
+                 <p>economy</p>
+             </div>
+             <div class="confirmbooking">
+                 <a href="{% url 'confirmbooking' %}"><button>Book Now</button></a>
+             </div>
+         </div>
+     </div>
+     <div class="flightlist">
+         <div class="logo">
+             <img src="{% static 'fly/images/airgo2.jpg' %}" alt="">  
+         </div>
+         <div class="from">
+             <div class="fromname">
+                 <h1>Mumbai</h1>
+             </div>
+             <div class="fromtime">
+                 <h4>12:00</h4>
+             </div>
+         </div>
+         <div class="flight">
+             <div class="flightname">
+                 <p>Air Go</p>
+             </div>
+             <div class="traveltime">
+                 <h4>1H 20M</h4>
+             </div>
+             <div class="stop">
+                 <h3>NON-STOP</h3>
+             </div>
+         </div>
+         <div class="to">
+             <div class="toname">
+                 <h1>Delhi</h1>
+             </div>
+             <div class="totime">
+                 <h4>13.20</h4>
+             </div>
+         </div>
+         <div class="booking">
+             <div class="price">
+                 <h4>INR 1,120</h4>
+             </div>
+             <div class="class">
+                 <p>economy</p>
+             </div>
+             <div class="confirmbooking">
+                 <a href="{% url 'confirmbooking' %}"><button>Book Now</button></a>
+             </div>
+         </div>
+     </div>
+     <div class="flightlist">
+         <div class="logo">
+             <img src="{% static 'fly/images/American-Airlines-Logo-1967.jpg' %}" alt="">  
+         </div>
+         <div class="from">
+             <div class="fromname">
+                 <h1>Mumbai</h1>
+             </div>
+             <div class="fromtime">
+                 <h4>12:00</h4>
+             </div>
+         </div>
+         <div class="flight">
+             <div class="flightname">
+                 <p>Aimerican</p>
+             </div>
+             <div class="traveltime">
+                 <h4>1H 20M</h4>
+             </div>
+             <div class="stop">
+                 <h3>NON-STOP</h3>
+             </div>
+         </div>
+         <div class="to">
+             <div class="toname">
+                 <h1>Delhi</h1>
+             </div>
+             <div class="totime">
+                 <h4>13.20</h4>
+             </div>
+         </div>
+         <div class="booking">
+             <div class="price">
+                 <h4>INR 2,572</h4>
+             </div>
+             <div class="class">
+                 <p>economy</p>
+             </div>
+             <div class="confirmbooking">
+                 <a href="{% url 'confirmbooking' %}"><button>Book Now</button></a>
+             </div>
+         </div>
+     </div>
+     <div class="flightlist">
+         <div class="logo">
+             <img src="{% static 'fly/images/british_airways.png' %}" alt="">  
+         </div>
+         <div class="from">
+             <div class="fromname">
+                 <h1>Mumbai</h1>
+             </div>
+             <div class="fromtime">
+                 <h4>12:00</h4>
+             </div>
+         </div>
+         <div class="flight">
+             <div class="flightname">
+                 <p>British</p>
+             </div>
+             <div class="traveltime">
+                 <h4>1H 20M</h4>
+             </div>
+             <div class="stop">
+                 <h3>NON-STOP</h3>
+             </div>
+         </div>
+         <div class="to">
+             <div class="toname">
+                 <h1>Delhi</h1>
+             </div>
+             <div class="totime">
+                 <h4>13.20</h4>
+             </div>
+         </div>
+         <div class="booking">
+             <div class="price">
+                 <h4>INR 2,260</h4>
+             </div>
+             <div class="class">
+                 <p>economy</p>
+             </div>
+             <div class="confirmbooking">
+                 <a href="{% url 'confirmbooking' %}"><button>Book Now</button></a>
+             </div>
+         </div>
+     </div>
+     <div class="flightlist">
+         <div class="logo">
+             <img src="{% static 'fly/images/airvistara.png' %}" alt="">  
+         </div>
+         <div class="from">
+             <div class="fromname">
+                 <h1>Mumbai</h1>
+             </div>
+             <div class="fromtime">
+                 <h4>12:00</h4>
+             </div>
+         </div>
+         <div class="flight">
+             <div class="flightname">
+                 <p>Air Vistara</p>
+             </div>
+             <div class="traveltime">
+                 <h4>1H 20M</h4>
+             </div>
+             <div class="stop">
+                 <h3>NON-STOP</h3>
+             </div>
+         </div>
+         <div class="to">
+             <div class="toname">
+                 <h1>Delhi</h1>
+             </div>
+             <div class="totime">
+                 <h4>13.20</h4>
+             </div>
+         </div>
+         <div class="booking">
+             <div class="price">
+                 <h4>INR 2,010</h4>
+             </div>
+             <div class="class">
+                 <p>economy</p>
+             </div>
+             <div class="confirmbooking">
+                 <a href="{% url 'confirmbooking' %}"><button>Book Now</button></a>
+             </div>
+         </div>
+     </div>
+     <div class="flightlist">
+         <div class="logo">
+             <img src="{% static 'fly/images/cathay.jpg' %}" alt="">  
+         </div>
+         <div class="from">
+             <div class="fromname">
+                 <h1>Mumbai</h1>
+             </div>
+             <div class="fromtime">
+                 <h4>12:00</h4>
+             </div>
+         </div>
+         <div class="flight">
+             <div class="flightname">
+                 <p>Cathay Pacific</p>
+             </div>
+             <div class="traveltime">
+                 <h4>1H 20M</h4>
+             </div>
+             <div class="stop">
+                 <h3>NON-STOP</h3>
+             </div>
+         </div>
+         <div class="to">
+             <div class="toname">
+                 <h1>Delhi</h1>
+             </div>
+             <div class="totime">
+                 <h4>13.20</h4>
+             </div>
+         </div>
+         <div class="booking">
+             <div class="price">
+                 <h4>INR 2,150</h4>
+             </div>
+             <div class="class">
+                 <p>economy</p>
+             </div>
+             <div class="confirmbooking">
+                 <a href="{% url 'confirmbooking' %}"><button>Book Now</button></a>
+             </div>
+         </div>
+     </div> {% endcomment %}
+ </div>
+ {% endblock body %}
+    
+ 

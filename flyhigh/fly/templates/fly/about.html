@@ -1,0 +1,57 @@
+{% extends 'fly/index.html' %}
+{% load static %}
+{% block title %}about us{% endblock title %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'fly/MINCSS/about.min.css' %}">
+{% endblock css %}
+ 
+{% block body %}
+    <div class="aboutsection"  style="--var:url('{% static 'fly/images/about2_bg.jpg' %}">
+        <div class="aboutcontainer">
+            
+        </div>
+    </div>
+    <div class="midhead">
+        <h1>About Us</h1>
+        <p>Lorem ipsum dolor, sit Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste illo dolore nemo debitis, eius aut vel suscipit enim odit ut temporibus, voluptatibus cum explicabo quo eveniet saepe perspiciatis illum vitae. amet consectetur adipisicing elit. Nihil nostrum fugit illum neque facilis expedita dolor nulla! Libero ea vitae enim culpa? Exercitationem ab aspernatur itaque, quam quae dolor ea quidem tenetur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum voluptatibus odio provident! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod magni necessitatibus explicabo suscipit rerum. Veritatis vero ex porro qui, nostrum molestiae, at magnam cum vel rem laborum mollitia non saepe.
+        </p>
+    </div>
+    <div class="midabout">
+        <div class="boxes">
+            <img src="{% static 'fly/images/passenger_box.jpg' %}" alt="">
+            <h1>56</h1>
+            <h2>Million passengers flown in 2020-2021</h2>
+            
+        </div>
+        <div class="boxes">
+            <img src="{% static 'fly/images/plane_box.png' %}" alt="">
+            <h1>270</h1>
+            <h2>Fleet size</h2>
+            
+        </div>
+        <div class="boxes">
+            <img src="{% static 'fly/images/destination_box.jpg' %}" alt="">
+            <h1>157</h1>
+            <h2>Destinations</h2>
+            
+        </div>
+        <div class="lowerbox">
+            <img src="{% static 'fly/images/staff.jpg' %}" alt="">
+        <div class="lowermiddle">
+            <div class="lower">
+                <h1>172</h1>
+                <h2>Nationalities</h2>
+            </div>
+            <div class="lower">
+                <h1>45040</h1>
+                <h2>Employees</h2>
+            </div>
+        </div>
+        </div>
+    </div>
+        
+{% endblock body %}
+
+
+    
+    

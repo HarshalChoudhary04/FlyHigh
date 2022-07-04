@@ -1,0 +1,194 @@
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  padding: 5rem;
+  position: relative;
+  left: 5%;
+  top: -6rem;
+  margin-bottom: 4rem;
+  background-color: rgba(255, 255, 255, 0.835);
+  border-radius: 4px;
+  box-shadow: 0 0 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+  .head {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0;
+    padding: 1.5rem 0;
+    // border: 1px solid navy;
+    background: linear-gradient(1deg, #1fa4d7, #f2efe8);
+    border-radius: 3px;
+    .firsthead {
+      display: flex;
+      width: 50%;
+      justify-content: center;
+      i {
+        font-size: 2rem;
+      }
+      h1 {
+      }
+    }
+    .secondhead {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      i {
+        font-size: 2rem;
+      }
+      h1 {
+      }
+    }
+  }
+  .covid {
+    width: 100%;
+    display: flex;
+    margin: 0.5rem 1rem;
+    padding: 1.5rem 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #406dc0;
+    border-radius: 3px;
+    color: #406dc0;
+    background: #f0f4ff;
+    // box-shadow: 0 2rem 4rem 2rem rgb(0 0 0 / 10%);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.4);
+    h2 {
+    }
+    button {
+      padding: 1rem 0.8rem;
+      a {
+        width: 100%;
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+  .formarea {
+    width: 100%;
+    margin: 1rem;
+    font-size: 2rem;
+    background-color: rgb(243, 241, 241);
+    border: 1px solid rgb(158, 154, 154);
+    border-radius: .5rem;
+    // box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
+
+
+    form {
+      label {
+        margin: 1rem 0rem;
+        padding: 1.5rem 2rem;
+        border-radius: 3px;
+        background-color: white;
+        box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
+        &:hover {
+        }
+      }
+      .firsthalf {
+        display: flex;
+        justify-content: space-around;
+        margin: 1rem 1.5rem;
+        .departure {
+          span {
+          }
+          select {
+            option {
+            }
+          }
+        }
+        .arrival {
+          span {
+          }
+          select {
+
+            option {
+            }
+          }
+        }
+        .jouneydate {
+          span {
+          }
+          input {
+              border: none;
+          }
+        }
+      }
+      .secondhalf {
+        margin: 1rem 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .classes {
+        }
+        .passengers {
+          margin-left: 3rem;
+          margin-right: 3rem;
+          span {
+          }
+            input {
+                // border: none;
+            }
+          
+        }
+        input[type=submit]{
+          width: 32.5%;
+          font-size: 2.5rem;
+          height: 6rem;
+          margin: 1rem 0 0 0;
+          border: none;
+          box-shadow: 0 0 .3rem .2rem rgba(0,0,0,.5);
+          background: #c60c30;
+          color: #f0f4ff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem;
+  font-size: 3rem;
+  h1 {
+    font-family: "Times New Roman", Times, serif;
+  }
+}
+.mainhead {
+  width: 100%;
+  .partnersblock {
+    width: calc(100 / 3);
+    display: flex;
+    flex-direction: row;
+    // justify-content: center;
+    // align-items: center;
+    flex-wrap: wrap;
+    .partners {
+      width: 30%;
+      height: 15%;
+      margin: 2rem;
+      // border: 1px solid black;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      border: 1px solid rgb(189, 181, 181);
+      box-shadow: 0 0 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+      img {
+        width: 100%;
+        height: 25rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+      }
+      h1 {
+        margin: 1.5rem 0.5rem;
+      }
+    }
+  }
+}

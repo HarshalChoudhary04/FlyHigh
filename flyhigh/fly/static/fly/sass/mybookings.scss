@@ -1,0 +1,42 @@
+header{
+    .home{
+        display: none !important;
+    }
+}
+.bookingsection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.6rem 0.4rem rgba(0,0,0,0.6 );
+    h1{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 5rem;
+    }
+    table{
+        border-radius: 1rem;
+        background-color: rgba(95, 100, 99, 0.63);
+        margin: 2rem;
+        padding: 2rem 16rem;
+        padding-bottom: 4rem;
+    
+        tr{
+            padding: 2rem 4rem;
+            margin: 4rem;
+            th{
+                font-size: 2rem;
+                padding: 0 2rem;
+            }
+            td{
+                font-size: 1.5rem;
+                padding: 1rem 3rem;
+                margin: .5rem .5rem;
+            }
+        }
+        hr{
+            color: black;
+        }
+
+    }
+}

@@ -1,0 +1,146 @@
+header{
+    .home{
+        display: none !important;
+    }
+}
+.flightsection{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    padding: 2rem;
+    // background-image: linear-gradient(to right,#2193b0 ,#6dd5ed);
+    // background-image: linear-gradient(to right,#c4e0e5  ,#c4e0e5);
+    background: #eee;
+
+    align-items: center;
+    h1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 6rem;
+        font-family: 'Times New Roman', Times, serif;
+        margin: 1rem;
+        padding: 1rem;
+    }
+    .flightlist{
+        width:90%;
+        display:flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: .15rem 0;
+        padding: 0rem 2rem;
+        background: #eee;
+        background-image: linear-gradient(to right,#4ca1af  ,#c4e0e5);
+        // background-image: linear-gradient(to right,#2193b0 ,#6dd5ed);
+        
+
+        
+        border-radius: .7rem;
+        .logo{
+            width: 25%;
+            margin: .5rem;
+            padding: .5rem;
+            img{
+                width: 80%;
+                height: 13rem;
+                border-radius: 1rem;
+                // height: 13rem;
+            }
+        }
+        .from{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: .5rem;
+            padding: .5rem;
+            .fromname{
+                h1{
+                    font-size: 3.5rem;
+                }
+            }
+            .fromtime{
+                h4{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+        .flight{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: .5rem;
+            margin: .5rem;
+            .flightname{
+                margin: .2rem;
+                padding: .2rem;
+                p{
+                    font-size: 1.8rem;
+                }
+            }
+            .traveltime{
+                margin: .2rem;
+                padding: .2rem;
+                h4{
+                    font-size: 1.2rem;
+                }
+            }
+            .stop{
+                margin: .2rem;
+                padding: .2rem;
+                h3{
+
+                }
+            }
+        }
+        .to{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: .5rem;
+            margin: .5rem;
+            .toname{
+                h1{
+                    font-size: 3.5rem;
+                }
+            }
+            .totime{
+                h4{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+        .booking{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: .5rem;
+            margin: .5rem;
+            .price{
+                h4{
+                    font-size: 1.5rem;
+                    color: blue;
+                }
+            }
+            .class{
+                p{
+                    margin: .5rem;
+                    font-size:1.3rem;
+                }
+            }
+            .confirmbooking{
+                input[type=submit]{
+                    cursor: pointer;
+                    border-radius: 1.6rem;
+                    padding: 1rem;
+                    color: black;
+                    margin: 1rem 0;
+                }
+            }  
+        }
+    }
+}

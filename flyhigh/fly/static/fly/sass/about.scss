@@ -1,0 +1,115 @@
+header{
+    .home{
+        display: none !important;
+    }
+}
+.aboutsection{
+    width: 100%;
+    height: 70vh; 
+    background: var(--var);
+    background-size: 100% 100%;
+    box-shadow: 0 0 0.6rem 0.4rem rgba(0, 0, 0, 0.6);
+    margin: 2rem 0;
+    .aboutcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+        h1{
+            margin-top: 3rem;
+            font-size: 5rem;
+            font-weight: 700;
+            color: rgb(248, 247, 253);
+            font-family: 'Times New Roman', Times, serif;
+        }
+        p{
+            color: rgba(255, 233, 233, 0.781);
+            width: 50%;
+            font-size: 2rem;
+        }
+    }
+}
+.midhead{
+    margin: 0 2rem;
+    h1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 6rem;
+        font-family: 'Times New Roman', Times, serif;
+    
+    }
+    p{
+        padding-inline: 2rem 6rem;
+        font-size: 1.2rem;
+        line-height: 2;
+        margin: 4rem;
+
+
+    }
+}
+
+.midabout{
+    margin: 3rem 0;
+    width: calc(100/3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .boxes{
+        width: 30%;
+        padding: 1rem;
+        margin: 2rem;
+        box-shadow: 0 0 .5rem .5rem rgba(0,0,0,.4);
+        border-radius: 1rem;
+        // opacity: .8;
+        img{
+            width: 100%;
+                margin-bottom: 1rem;
+                box-shadow: 0 0 .3rem .3rem rgba(0,0,0,.4);
+                border-radius: 1rem;
+                height: 20rem;  
+        }
+        h1{
+            text-align: center;
+            padding: 1.5rem;
+            font: 600 2.5rem serif;
+            color: rgb(7,87,87)
+        }
+        h2{
+            text-align: center;
+
+        }
+        
+    }
+    .lowerbox{
+        width: 40%;
+        // height: 20rem;
+        padding: 1rem;
+        margin: 6rem;
+        box-shadow: 0 0 .5rem .5rem rgba(0,0,0,.4);
+        border-radius: 1rem;
+        img{
+            width: 100%;
+            height: 30rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 .3rem .3rem rgba(0,0,0,.4);
+            border-radius: 1rem;
+        }
+        .lowermiddle{
+            display: flex;
+            .lower{
+                width:50%;
+                h1{
+                    color: rgb(7,87,87);
+                    text-align: center;
+                    padding: 1.5rem;
+                    font: 600 2.5rem serif;
+                }
+                h2{
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

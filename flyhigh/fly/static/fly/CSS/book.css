@@ -1,0 +1,193 @@
+.flightsection {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: #77cbff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flightsection h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 6rem;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.flightsection .flightlist {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: .1rem 0;
+  padding: 0rem 2rem;
+  background: #eee;
+  border-radius: .7rem;
+}
+
+.flightsection .flightlist .logo {
+  width: 25%;
+  margin: .5rem;
+  padding: .5rem;
+}
+
+.flightsection .flightlist .logo img {
+  width: 80%;
+  height: 13rem;
+  border-radius: 1rem;
+}
+
+.flightsection .flightlist .from {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: .5rem;
+  padding: .5rem;
+}
+
+.flightsection .flightlist .from .fromname h1 {
+  font-size: 3.5rem;
+}
+
+.flightsection .flightlist .from .fromtime h4 {
+  font-size: 1.3rem;
+}
+
+.flightsection .flightlist .flight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: .5rem;
+  margin: .5rem;
+}
+
+.flightsection .flightlist .flight .flightname {
+  margin: .2rem;
+  padding: .2rem;
+}
+
+.flightsection .flightlist .flight .flightname p {
+  font-size: 1.8rem;
+}
+
+.flightsection .flightlist .flight .traveltime {
+  margin: .2rem;
+  padding: .2rem;
+}
+
+.flightsection .flightlist .flight .traveltime h4 {
+  font-size: 1.2rem;
+}
+
+.flightsection .flightlist .flight .stop {
+  margin: .2rem;
+  padding: .2rem;
+}
+
+.flightsection .flightlist .to {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: .5rem;
+  margin: .5rem;
+}
+
+.flightsection .flightlist .to .toname h1 {
+  font-size: 3.5rem;
+}
+
+.flightsection .flightlist .to .totime h4 {
+  font-size: 1.3rem;
+}
+
+.flightsection .flightlist .booking {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: .5rem;
+  margin: .5rem;
+}
+
+.flightsection .flightlist .booking .price h4 {
+  font-size: 1.5rem;
+  color: blue;
+}
+
+.flightsection .flightlist .booking .class p {
+  margin: .5rem;
+  font-size: 1.3rem;
+}
+
+.flightsection .flightlist .booking .confirmbooking a {
+  text-decoration: none;
+  color: black;
+}
+
+.flightsection .flightlist .booking .confirmbooking a button {
+  border-radius: 1.6rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}

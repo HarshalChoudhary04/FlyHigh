@@ -1,0 +1,147 @@
+{% extends 'fly/index.html' %}
+{% load static %}
+{% block title %}services{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'fly/MINCSS/services.min.css' %}">
+{% endblock css %}
+
+
+{% block body %}
+<div class="services">
+        <div class="head">
+            <div class="firsthead">
+                <i class="fas fa-plane-departure"></i>                
+                <h1>Search flights</h1>
+            </div>
+            <div class="secondhead">
+                <i class="fad fa-ticket"></i> 
+                <h1>My Bookings</h1>
+            </div>
+        </div>
+         <div class="covid">
+                
+                <h2><i class="far fa-globe"></i> Visit our COVID-19 hub for current destinations, travel advice and more.</h2>
+                <button>
+                    <a href="">Go to COVID-19 hub</a>
+                </button>   
+        </div>
+        <div class="formarea">
+            <form action="{% url 'selectflight' %}" method='POST'>
+                {% csrf_token %}
+
+                <div class="firsthalf">
+                    <label for="" class="departure">
+                        <span class="label">Departure airport</span>
+                        <select name="depart" id="depart">
+                            <option value=""></option>
+                            <option value="Peru">Peru</option>
+                            <option value="London">London</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Dubai">Jaipur</option>
+                            <option value="Agra">Agra</option>
+                            <option value="Tokyo">Tokyo</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Moscow">Moscow</option>
+                            <option value="Paris">Paris</option>
+                            <option value="Sydney">Sydney</option>
+                        </select>
+                    </label>
+                    <label for="" class="arrival">
+                        
+                        <span class="label">Arrival airport</span>
+                        <select name="arrival" id="arrival">
+                            <option value=""></option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Agra">Agra</option>
+                            <option value="Sydney">Sydney</option>
+                            <option value="Tokyo">Tokyo</option>
+                            <option value="Peru">Peru</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="Dubai">Jaipur</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Paris">Paris</option>
+                            <option value="London">London</option>
+                            <option value="Moscow">Moscow</option>
+                        </select>
+                    </label>
+                    <label for="" class="classes">
+                        <span class="label">Class</span>
+                        <select name="class" id="class">
+                            <option value="">Select Class</option>
+                            <option value="Economy Class">Economy Class</option>
+                            <option value="Business Class">Business Class</option>
+                            <option value="First Class">First Class</option>
+                        </select>
+                    </label>
+                </div>
+                
+                
+                <div class="secondhalf">
+                    
+                    
+                    
+                    <label for="" class="jouneydate">
+                        <span class="label">Journey date</span>
+                        <input type="date" name="date" id="date">
+                    </label>    
+                    <label for="" class="passengers">
+                        <span class="label">Passengers</span>
+                        <input type="number" name='passengers' id='passengers' min="1" value="1" max="5">
+                    </label>
+                    <input type="submit" value="Search Flights">
+                    
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+
+<div class="heading">
+    <h1>Affilated With</h1>
+</div>
+
+<div class="mainhead">
+    <div class="partnersblock">
+        <div class="partners">
+            <img src="{% static 'fly/images/air-india-logo-1024x836.png' %}" alt="">
+            <h1>Airlines-Airlines</h1>
+        </div>
+        <div class="partners">
+            <img src="{% static 'fly/images/airasia-india.png' %}" alt="">
+            <h1>AirAsia-Airlines</h1>
+        </div>
+        <div class="partners">
+            <img src="{% static 'fly/images/airgo2.jpg' %}" alt="">
+            <h1>GoAir-Airlines</h1>
+        </div>
+        <div class="partners">
+            <img src="{% static 'fly/images/qatar.jpeg' %}" alt="">
+            <h1>Qatar-Airlines</h1>
+        </div>
+        <div class="partners">
+            <img src="{% static 'fly/images/Emirates-Logo-1999.jpg' %}" alt="">
+            <h1>Emirates-Airlines</h1>
+        </div>
+        <div class="partners">
+            <img src="{% static 'fly/images/Singapore-Airlines-logo-vertical.png' %}" alt="">
+            <h1>Singapore-Airlines</h1>
+        </div>
+        <div class="partners">
+            <img src="{% static 'fly/images/cathay.jpg' %}" alt="">
+            <h1>Cathay-Airlines</h1>
+        </div>
+        <div class="partners">
+            <img src="{% static 'fly/images/American-Airlines-Logo-1967.jpg' %}" alt="">
+            <h1>American-Airlines</h1>
+        </div>
+        <div class="partners">
+            <img src="{% static 'fly/images/british_airways.png' %}" alt="">
+            <h1>British-Airlines</h1>
+        </div>
+    </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,50 @@
+.pd{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 0 .3rem .3rem rgba(0,0,0,.2);
+    margin: 1rem 0;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    .heading{
+        text-align: center;
+        width: 100%;
+        h1{
+            font: 700 5rem serif;
+        }
+    }
+    .container1{
+        width: calc(100/3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        .mumbai{
+            width: 30%;
+            padding: 1rem;
+            margin: 2rem;
+            box-shadow: 0 0 .5rem .5rem rgba(0,0,0,.4);
+            border-radius: 1rem;
+            opacity: .8;
+            
+            img{
+                width: 100%;
+                margin-bottom: 1rem;
+                box-shadow: 0 0 .5rem .5rem rgba(0,0,0,.4);
+                border-radius: 1rem;
+                height: 20rem;
+            }
+            &:hover{
+                opacity: 1;
+                cursor: pointer;
+            }
+            h1{
+                text-align: center;
+                padding: 1.5rem;
+                font: 600 2.5rem serif;
+                color: rgb(7,87,87)
+            }
+        }
+    }   
+}

@@ -1,0 +1,42 @@
+{% extends 'fly/index.html' %}
+{% load static %}
+{% block title %}login{% endblock title %}
+ 
+{% block css %}
+<link rel="stylesheet" href="{% static 'fly/MINCSS//login.min.css' %}">
+{% endblock css %}
+
+{% block body %}
+
+<div class="regcontainer">
+    <div class="leftpart">
+        <i class="fas fa-rocket"></i>           
+        <h1>Welcome</h1>
+        <p>You are just few steps away to just us </p>
+        <a href="{% url 'registration' %}"><button>Register</button></a>
+    </div>
+    <div class="rightpart">
+
+        <div class="formcotainer">
+            <h1>Login Yourself</h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {% for fm in logfm %}
+                
+                <label for="">
+                    {{fm}}
+                </label>
+                {% endfor %}
+
+
+                <label for="">
+                    <input type="submit" name="submit">
+                </label>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+    

@@ -1,0 +1,40 @@
+{% extends 'fly/index.html' %}
+{% load static %}
+{% block title %}mybookings{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'fly/MINCSS/mybookings.min.css' %}">
+{% endblock css %}
+
+
+{% block body %}
+    <div class="bookingsection">
+        <h1>My Bookings</h1>
+        <table>
+            
+            <tr>
+                <th>Date of Journey</th>
+                <th>Flight name</th>
+                <th>Class</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Passengers</th>
+                <th>Fare</th>
+            </tr>
+            <hr>
+            {% for bk in books %}
+            <tr>
+                <td>{{bk.journey_date}}</td>
+                <td>{{bk.journey_details.flight_name}}</td>
+                <td>{{bk.journey_details.cls}}</td>
+                <td>{{bk.journey_details.dep_airport}}</td>
+                <td>{{bk.journey_details.arr_airport}}</td>
+                <td>{{bk.passenger}}</td>
+                <td>{{bk.totalfare}}</td>
+            </tr>
+            <hr>
+            {% endfor %}
+        </table>
+    </div>
+    
+{% endblock body %}

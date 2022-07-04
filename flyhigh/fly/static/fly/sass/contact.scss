@@ -1,0 +1,95 @@
+h1{
+    display: flex;
+    justify-content: center; 
+    margin: 1rem 0;
+    font-size: 6rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(0, 0, 0);
+
+}
+.contactsection{
+    color: white;
+    width: 100%;
+    display: flex;
+    background-image: var(--img2); 
+    background-size: 100% 100%;
+    box-shadow: 0 0 0.6rem 0.4rem rgba(0, 0, 0, 0.6);
+
+    .box{
+        width: 100%;
+        margin: 2rem 2rem;
+
+        display: flex;
+        .detail{
+            box-shadow: 0 0 .3rem .3rem rgba(0,0,0,.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            margin: 1.5rem 2rem;
+            .call{
+                margin: 1.7rem 0 ;
+                display: flex;
+                width: 70%;
+                .fas{
+                    font-size: 4rem;
+                }
+                .desc{margin-left:1.3rem ;
+                    h2{
+                        font-size: 3rem;
+                    }
+                    p{
+                        color: rgb(255, 217, 217);
+                        font-size: 1.3rem;
+                        margin-top: 0.6rem;
+                    }
+                }
+            }
+        }
+        .detail1{
+            width: 50%;
+            margin: 1.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 .3rem .3rem rgba(0,0,0,.4);
+            h2{
+                color: rgb(0, 0, 0);
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 3rem;
+                margin-bottom: 1.3rem;
+            }
+            form{
+                 display: flex;
+                flex-direction: column;
+
+                input,textarea{
+                    border-radius: 0.6rem;
+                    margin: .4rem 0;
+                    padding: 1rem .9rem;
+                    border: none;
+                    outline: none;
+            }
+            input[type=submit]{
+                font-weight: 900;
+                border-radius: 1rem;
+                padding: .9rem 0rem;
+                width: 60%;
+                align-self: center;
+                &:hover{
+                    color: white;
+                    background-color: black;
+                    border: 1px solid white;
+                }
+            }
+            span{
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+                
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,110 @@
+{% extends 'fly/index.html' %}
+{% load static %}
+{% block title %}Confirmbooking{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'fly/MINCSS/confirmbooking.min.css' %}">
+{% endblock css %}
+
+{% block body %}
+
+    <div class="confirmbooking">
+        <div class="leftpart">
+            <i class="fas fa-rocket"></i>           
+            <h1>Fly high</h1>
+            <p>With {{booking.flight_name}}</p>
+            <a href="{% url 'login' %}"><button>login</button></a>
+        </div>
+        <div class="rightpart">
+
+            <div class="formcotainer">
+                <h1>Confirm Your Booking</h1>
+                <form action="{% url 'bookticket' %}" method='POST'>
+                    {% csrf_token %}
+                    <label for="">
+                        <span>Flight Name</span>
+                        <input type="text" placeholder="Flight Name*" required readonly value="{{booking.flight_name}}">
+                    </label>
+                    
+                    <label for="">
+                        <span>Journey Date</span>
+                        <input type="date" placeholder=" Journey Date*" name="date" id="date" required readonly value={{jdate}}>
+                    </label>
+                    
+                    <label for="">
+                        <span> From </span>
+                        <input type="text" placeholder=" Departure Airport*" required readonly value="{{booking.dep_airport}}">
+                    </label>
+                    
+                    <label for="">
+                        <span>To</span>
+                        <input type="text" placeholder=" Arrival Airport*" required readonly value="{{booking.arr_airport}}">
+                    </label>
+                    
+                    <label for="">
+                        <span>Class</span>
+                        <input type="text" placeholder=" Class*" required readonly value="{{booking.cls}}">
+                    </label>
+                    
+                    
+                    <label for="">
+                        <span>Passengers</span>
+                        <input type="number" placeholder="Total passenger*"  required readonly value="{{pass}}">
+                    </label>
+
+                    <label for="">
+                        <span>Full Name</span>
+                        <input type="text" name="name" id="name" placeholder="Full Name*" required>
+                    </label>
+
+                    
+                    <label for="">
+                        <span>Email</span>
+                        <input type="email" name="email" id="email" placeholder="Your Email*" requierd>
+                    </label>
+
+                    <label for="">
+                        <span>Phone </span>
+                        <input type="text" name="phone" id="phone" placeholder="Your Phone*" requierd>
+                    </label>
+
+                    <label for="">
+                        <span>Address</span>
+                        <input type="text" placeholder="Your Address" name="address" id="address" requierd>
+                    </label>
+
+                    
+                    
+                    <label for="">
+                        <select name="vaccinestaus" id="vaccinestaus">
+                            <option value="">Select Vaccination Staus</option>
+                            <option value="fully vaccinated">Fully Vaccinacted </option>
+                            <option value="partially vaccinated">Partially Vaccinated</option>
+                            <option value="not vaccinated">Not Vaccinated</option>
+                        </select>
+                        <input type="text" name="rootdet" id="rootdet" value="{{booking.id}}">
+                    </label>
+
+
+                    <label for="">
+                        <input type="radio" name="gender" value="M" id="m"><span>Male</span>
+                        <input type="radio" name="gender" value="F" id="f"><span>Female</span>
+                    </label>
+                    
+                    <label for="">
+                        <input type="text" name="totalamount" id="totalamount" value="" placeholder="Total Fare" readonly>
+                    </label>
+                    <script>
+                        let total = {{booking.total_fare}}*3;
+                        document.getElementById('totalamount').value = "INR "+total;
+                    </script>
+                    <label for="">
+                        <input type="submit" value="confirmBooking" name="confirmbooking" style="cursor: pointer;">
+                    </label>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock body %}

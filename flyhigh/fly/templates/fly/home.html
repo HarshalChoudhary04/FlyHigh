@@ -1,0 +1,158 @@
+{% extends 'fly/index.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'fly/MINCSS/home.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fly/MINCSS/services.min.css' %}">
+{% endblock css %}
+
+{% block body %}
+    <div class="services">
+        <div class="head">
+            <div class="firsthead">
+                <i class="fas fa-plane-departure"></i>                
+                <h1>Search flights</h1>
+            </div>
+            <div class="secondhead">
+                <i class="fad fa-ticket"></i> 
+                <h1>My Bookings</h1>
+            </div>
+        </div>
+        <div class="covid">
+                
+                <h2><i class="far fa-globe"></i> Visit our COVID-19 hub for current destinations, travel advice and more.</h2>
+                <button>
+                    <a href="">Go to COVID-19 hub</a>
+                </button>   
+        </div>
+        <div class="formarea">
+            <form action="{% url 'selectflight' %}" method='POST'>
+                {% csrf_token %}
+
+                <div class="firsthalf">
+                    <label for="" class="departure">
+                        <span class="label">Departure airport</span>
+                        <select name="depart" id="depart">
+                            <option value=""></option>
+                            <option value="Peru">Peru</option>
+                            <option value="London">London</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Dubai">Jaipur</option>
+                            <option value="Agra">Agra</option>
+                            <option value="Tokyo">Tokyo</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Moscow">Moscow</option>
+                            <option value="Paris">Paris</option>
+                            <option value="Sydney">Sydney</option>
+                        </select>
+                    </label>
+                    <label for="" class="arrival">
+                        
+                        <span class="label">Arrival airport</span>
+                        <select name="arrival" id="arrival">
+                            <option value=""></option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Agra">Agra</option>
+                            <option value="Sydney">Sydney</option>
+                            <option value="Tokyo">Tokyo</option>
+                            <option value="Peru">Peru</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="Dubai">Jaipur</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Paris">Paris</option>
+                            <option value="London">London</option>
+                            <option value="Moscow">Moscow</option>
+                        </select>
+                    </label>
+                    <label for="" class="classes">
+                        <span class="label">Class</span>
+                        <select name="class" id="class">
+                            <option value="">Select Class</option>
+                            <option value="Economy Class">Economy Class</option>
+                            <option value="Business Class">Business Class</option>
+                            <option value="First Class">First Class</option>
+                        </select>
+                    </label>
+                </div>
+                
+                
+                <div class="secondhalf">
+                    
+                    
+                    
+                    <label for="" class="jouneydate">
+                        <span class="label">Journey date</span>
+                        <input type="date" name="date" id="date">
+                    </label>    
+                    <label for="" class="passengers">
+                        <span class="label">Passengers</span>
+                        <input type="number" name='passengers' id='passengers' min="1" value="1" max="5">
+                    </label>
+                    
+                    <input type="submit" value="Search Flights">                    
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <section class="pd">
+        <div class="heading">
+            <h1>Popular Destination</h1>
+        </div>
+        <div class="container1">
+        <div class="mumbai">
+                <img src="{% static 'fly/images/mumbai-1370023.jpg' %}" alt="">
+                <h1>Mumbai</h1>
+            </div>
+            <div class="mumbai">
+                <img src="{% static 'fly/images/hawa-mahal-6156123.jpg' %}" alt="">
+                <h1>Jaipur</h1>
+            </div>
+            <div class="mumbai">
+                <img src="{% static 'fly/images/india-3578009.jpg' %}" alt="">
+                <h1>Agra</h1>
+            </div>
+            <div class="mumbai">
+                <img src="{% static 'fly/images/sydney-opera-house-363244.jpg' %}" alt="">
+                <h1>Sydney</h1>
+            </div>
+            <div class="mumbai">
+                <img src="{% static 'fly/images/tokyo-2086596.jpg' %}" alt="">
+                <h1>Tokyo</h1>
+            </div>
+            <div class="mumbai">
+                <img src="{% static 'fly/images/machu-picchu-2773629.jpg' %}" alt="">
+                <h1>Peru</h1>
+            </div>
+        <div class="mumbai">
+                <img src="{% static 'fly/images/pyramids-2159286.jpg' %}" alt="">
+                <h1>Egypt</h1>
+            </div>
+            <div class="mumbai">
+                <img src="{% static 'fly/images/dubai-2292779.jpg' %}" alt="">
+                <h1>Dubai</h1>
+            </div>
+            <div class="mumbai">
+                <img src="{% static 'fly/images/beach-666122.jpg' %}" alt="">
+                <h1>Maldives</h1>
+            </div>
+            <div class="mumbai">
+                <img src="{% static 'fly/images/eiffel-tower-951509.jpg' %}" alt="">
+                <h1>Paris</h1>
+            </div>
+            <div class="mumbai">
+                <img src="{% static 'fly/images/london-3078109.jpg' %}" alt="">
+                <h1>London</h1>
+            </div>
+            <div class="mumbai">
+                <img src="{% static 'fly/images/moscow-1556561.jpg' %}" alt="">
+                <h1>Moscow</h1>
+            </div>
+        </div>
+    </section>
+{% endblock body %}
+    
+    

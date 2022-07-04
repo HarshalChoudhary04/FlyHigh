@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'fly/images/fevi-01.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'fly/MINCSS/index.min.css' %}">
+    {% block css %}{% endblock css %}
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logo">
+                <a href=""><img src="{% static 'fly/images/logo-02.png' %}" alt=""></a>
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+            <div class="navi">
+                {% if not request.user.is_authenticated %}
+                    <ul>
+                        <li><a href="{% url 'registration' %}">Register</a></li>
+                        <li><a href="{% url 'login' %}">Log_in</a></li>
+                    </ul>
+                {% else %}
+                    <ul>
+                        <li><a href="">{{request.user}}</a></li>
+                        <li><a href="{% url 'logout' %}">Log_out</a></li>
+                    </ul>
+                {% endif %}
+            </div>
+        </nav>
+        <div class="home" style="--img:url('{% static 'fly/images/air.jpg' %}')">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, tempora natus vitae reprehenderit ipsam nulla.</p>
+            <a href="{% url 'services' %}"> Book Now</a>
+
+        </div>
+    </header>
+
+    {% block body %}{% endblock body %}
+    
+    <footer>
+        <div class="foot">
+            <div class="logodec">
+                <a href="{% url 'home' %}"><img src="{% static 'fly/images/logo-01.png' %}" alt=""></a>
+            </div>
+           <div class="desc">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dolore ipsam earum nostrum consequuntur ex facilis commodi temporibus voluptatibus delectus.</p>
+           </div>
+            <div class="shortcut">
+
+                <ul>
+                    <li><a href="{% url 'mybooking' %}"><i class="fad fa-ticket"></i> My Bookings  </a></li>
+                    <li><a href="{% url 'about' %}"><i class="fas fa-address-card"></i> About Us</a></li>
+                    <li><a href="{% url 'contact' %}"><i class="fas fa-id-card-alt"></i> Contact Us</a></li>
+                    <li><a href="{% url 'services' %}"><i class="fab fa-affiliatetheme"></i> Afillated</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="social">
+            <h3>Follow Us </h3>
+            <ul>
+                <li><a href="https://www.facebook.com/profile.php?id=100074780544191"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="https://github.com/HarshalChoudhary04"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/harshal-choudhary-bba6b9221/"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://twitter.com/masterharsh999"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+            <div class="copyright">
+                <p>&copy;Copyright 2021-<a href="{% url 'home' %}">&copy;FLYHIGH </a>All rights reserved</p>
+            </div>
+        </div>
+        
+    </footer>
+</body>
+</html>
